@@ -13,10 +13,10 @@ kubectl create namespace ${ns}
 echo "===> installing Helm chart: "${chart}
 helm repo update
 if [ -f ${values}  ];
-then
-    helm install -n ${ns} ${app} -f ${values} ${chart}
-else
-    helm install -n ${ns} ${app} ${chart}
+    then
+        helm install -n ${ns} ${app} -f ${values} ${chart}
+    else
+        helm install -n ${ns} ${app} ${chart}
 fi
 
 echo "===> adding ingress for: "${app}
