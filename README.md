@@ -24,7 +24,7 @@ With this [Terraform](https://www.terraform.io) plan you can create one or more 
 | vm_count         | How many vms should be deployed (min 1 - max 99)                    | 3       |
 | proxmox_server   | To which api server should be connected                             |         |
 | proxmox_node     | On which node should the vms be created (even in a single node env) |         |
-| proxmox_username | Which username should be used to authenticate                       |         |
+| proxmox_username | Which username should be used to authenticate (e.g. user@pve)       |         |
 | proxmox_password | The password for the given user                                     |         |
 
 ### Create a `terraform.tfvars` file
@@ -48,3 +48,21 @@ terraform apply plan.out
 # show the vmids, ip addresses and root passwords
 terraform output nodes
 ```
+
+## Adding config for kubectl
+
+1. Copy `config` to `~/.kube/config` OR
+
+2. Merge `config` with your existing ~/.kube/config:
+
+
+```bash
+export KUBECONFIG=~/.kube/config:~/someotherconfig 
+kubectl config view --flatten  > ~/.kube/config
+```
+
+## Example librespeed app with Ingress to test your cluster
+
+At stacks/librespeed, an example with template bash scripts has been created to deploy the librespeed app into its own namespace.  The librespeed app is pulled from the k8s-at-home helm chart repository with an intermediate step to adjust chart values to suit your setup.
+
+[stacks/librespeed](https://github.com/apwiggins/proxmox-terraform-k3s-ansible-cluster/tree/master/stacks/librespeed)
