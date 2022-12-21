@@ -2,6 +2,9 @@
 
 With this [Terraform](https://www.terraform.io) plan you can create one or more virtual machines on [Proxmox](https://www.proxmox.com) and install a k3s cluster automatically on it.
 
+## Reference:
+Based on the original work at: https://github.com/BaldFabi/proxmox-terraform-k3s-ansible-cluster.git
+
 ## Uses
 
 - A template named _debian-k3s-node_ that was generated using this [repo](https://github.com/BaldFabi/proxmox-packer)
@@ -41,13 +44,16 @@ proxmox_username = "your_user@the_configured_realm"
 ## Usage
 
 ```bash
-git clone https://github.com/BaldFabi/proxmox-terraform-k3s-ansible-cluster.git
+git clone https://github.com/apwiggins/proxmox-terraform-k3s-ansible-cluster.git
 terraform init
 terraform plan -out plan.out
 terraform apply plan.out
 # show the vmids, ip addresses and root passwords
 terraform output nodes
+./build_cluster.sh
 ```
+NOTE: something is broken in the terraform as ssh in terraform seems to have stopped working.  Can still ssh root@node to any node, but not within the normal terraform flow.  A helper script 'build_cluster.sh' has been added to run the ansible playbook.
+
 
 ## Adding config for kubectl
 
