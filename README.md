@@ -35,7 +35,7 @@ Based on the original work at: https://github.com/BaldFabi/proxmox-terraform-k3s
 You can create a `terraform.tfvars` ([documentation](https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files)) to provide all necessary variables. This file is also included within the `.gitignore` file
 
 ```text
-vm_count = 10
+vm_count = 3
 proxmox_node = "your_node"
 proxmox_server = "your_node.with.fqdn_or_ip"
 proxmox_username = "your_user@the_configured_realm"
