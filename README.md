@@ -52,8 +52,9 @@ terraform apply plan.out
 terraform output nodes
 ./build_cluster.sh
 ```
-NOTE: something is broken in the terraform as ssh in terraform seems to have stopped working.  Can still ssh root@node to any node, but not within the normal terraform flow.  A helper script 'build_cluster.sh' has been added to run the ansible playbook.
+NOTE 1: something is broken in the terraform as ssh in terraform seems to have stopped working.  Can still ssh root@node to any node, but not within the normal terraform flow.  A helper script 'build_cluster.sh' has been added to run the ansible playbook.
 
+NOTE 2: added a replacement site.yml which replaces the stock k3s-ansible/site.yml.  Normally open-iscsi is added to the Ubuntu cluster hosts (master, workers) to support OpenEBS or Longhorn storage and permit PVs to be managed.
 
 ## Adding config for kubectl
 
