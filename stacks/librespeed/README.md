@@ -1,6 +1,6 @@
 # Add a sample application stack
 
-Assumes that you have [kubectl] (<https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/>) and [helm] (<https://helm.sh/docs/intro/install/>) installed
+Assumes that you have [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) and [helm](https://helm.sh/docs/intro/install/) installed
 
 ## 1. Get chart values
 
@@ -10,9 +10,9 @@ Prior to installation, pull the chart values for any local customizations; origi
 
 ## 2. Add ingress to sample application's namespace
 
-Sample ingress to a namespace is provided at librespeed_ingress.yaml
-Adjust to local needs.
-Add librespeed.example.com and IP address to your local DNS server; I use pi-hole for local DNS
+- Sample ingress to a namespace is provided at librespeed_ingress.yaml
+- Adjust to local needs.
+- Add librespeed.example.com and IP address to your local DNS server; I use [pi-hole](https://pi-hole.net/) for local DNS
 
 ## 3. Install sample application from chart
 
