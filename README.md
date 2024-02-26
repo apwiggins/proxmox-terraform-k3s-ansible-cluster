@@ -1,5 +1,7 @@
 # Deploy k3s cluster on Proxmox using Terraform and Ansible
 
+> NOTE: PROXMOX V8.X DOESN'T WORK WITH THE TELMATE TERRAFORM PROVIDER.  THIS REPOSITORY MAY NOT WORK FOR YOU.
+
 With this [Terraform](https://www.terraform.io) plan you can create one or more virtual machines on [Proxmox](https://www.proxmox.com) and install a k3s cluster automatically on it.
 
 ## Reference:
